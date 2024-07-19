@@ -1,0 +1,27 @@
+# Using Normal Method For all Files:
+
+# import os
+# directory = "D://Files"
+# counter = 1
+# for filename in os.listdir(directory):
+#     new_file_name = os.path.splitext(filename)
+#     b = new_file_name[1]
+#     os.rename(f"{directory}/{filename}", f"{directory}/{counter}{b}")
+#     counter += 1
+
+# Using Enumerate Function For All Files:
+
+# [os.rename(f"D://Files/{filename}", f"D://Files/{i + 1}{os.path.splitext(filename)[1]}")
+#  for i, filename in enumerate(os.listdir("D://Files"))]
+
+# Using endswith() function For Specific Files:
+
+# import os
+# directory = "D://Files"
+# files = os.listdir(directory)
+# extension = input("Enter extension: ")
+# i = 1
+# for filename in files:
+#     if filename.endswith(extension):
+#         os.rename(f"{directory}/{filename}", f"{directory}/{i}{extension}")
+#         i += 1
