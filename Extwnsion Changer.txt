@@ -1,0 +1,43 @@
+# CHANGING THE FILE EXTENSION ALONG WITH NAME AS NUMBERS:
+
+"""
+
+import os
+
+directory = "D://Files"
+
+current_extension = input("Enter the extension you want to change: ")
+new_extension = input("Enter new extension: ")
+
+counter = 1
+
+for filename in os.listdir(directory):
+    if filename.endswith(current_extension):
+        new_filename = f"{counter}{new_extension}"
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
+        counter += 1
+
+print("File extensions changed successfully!")
+
+"""
+
+# INCASE U WANT TO RETAIN THE FILE NAME:
+
+"""
+
+import os
+
+directory = "D://Files"
+
+current_extension = input("Enter the extension you want to change: ")
+new_extension = input("Enter new extension: ")
+
+for filename in os.listdir(directory):
+    if filename.endswith(current_extension):
+        new_filename = os.path.splitext(filename)[0] + new_extension
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
+
+print("File extensions changed successfully!")
+
+"""
+
