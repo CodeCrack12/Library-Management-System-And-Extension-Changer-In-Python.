@@ -1,0 +1,28 @@
+import argparse
+
+
+
+def calc(x):
+    if x.o == "add":
+        return x.a + x.b
+
+    elif x.o == "sub":
+        return x.a - x.b
+
+    elif x.o == "mul":
+        return x.a * x.b
+
+    elif x.o == "div":
+        return x.a / x.b
+
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("-a", default=1.0, type=float, help="Enter the first number.")
+parser.add_argument("-b", default=2.0, type=float, help="Enter the second number.")
+parser.add_argument("-o", default="add", type=str, help="Enter the operation.")
+
+x = parser.parse_args()
+print(calc(x))
+
+# To run it type : python .\main.py -o add -a 3 -b 4
